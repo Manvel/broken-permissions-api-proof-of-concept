@@ -15,5 +15,5 @@
    },
    "optional_permissions": ["<all_urls>", "https://*/*", "https://*.google.com"],
    "permissions": [],
-   "version": "0.1"
+   "version": "0.2"
 }
