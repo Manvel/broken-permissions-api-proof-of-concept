@@ -13,7 +13,7 @@
       "48": "images/icon/48x48.png",
       "16": "images/icon/16x16.png"
    },
-   "optional_permissions": ["<all_urls>"],
+   "optional_permissions": ["<all_urls>", "https://*/*", "https://*.google.com"],
    "permissions": [],
    "version": "0.1"
 }
