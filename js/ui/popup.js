@@ -1,28 +1,26 @@
 function permission_request(origins)
 {
-  chrome.permissions.request(origins, (granted) =>
-  {
-    console.log(granted);
-    alert(`Requested permission is: ${granted}`);
-  });
-}
-
-function permission_contain(origins)
-{
-  console.log(origins);
-  chrome.permissions.contains(origins, (result) =>
-  {
-    console.log(result);
-    alert(`Contain permission?: ${result}`);
-  });
+  chrome.permissions.request(origins);
 }
 
 function permission_remove(origins)
 {
-  chrome.permissions.remove(origins, (remove) => 
+  chrome.permissions.remove(origins);
+}
+
+function permission_contain(origins)
+{
+  chrome.permissions.contains(origins, (result) =>
   {
-    console.log(remove);
-    alert(`Was permission removed?: ${remove}`);
+    document.querySelector("#contains").textContent = result;
+  });
+}
+
+function clear()
+{
+  document.querySelectorAll("tbody td").forEach((el) =>
+  {
+    el.textContent = "";
   });
 }
 
@@ -32,7 +30,19 @@ addEventListener("DOMContentLoaded", () =>
   {
     element.addEventListener("click", ()=>
     {
-      window[element.id]({origins: [element.closest("p").querySelector("input").value]});
+      window[element.id]({origins: [document.querySelector("select").value]});
     });
   });
+});
+
+chrome.permissions.onAdded.addListener(function(result)
+{
+  clear();
+  document.querySelector("#on-added").textContent = JSON.stringify(result);
+});
+
+chrome.permissions.onRemoved.addListener(function(result)
+{
+  clear();
+  document.querySelector("#on-removed").textContent = JSON.stringify(result);
 });

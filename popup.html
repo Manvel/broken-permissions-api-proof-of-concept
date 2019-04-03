@@ -7,16 +7,38 @@
 	</head>
 	<body>
 		<p>
-			<label>Request origin permission: <input type="text"></label>
+			<label>Select origin:
+				<select>
+					<option value="<all_urls>">&lt;all_urls&gt;</option>
+					<option value="https://*/*">https://*/*</option>
+					<option value="https://*.google.com">https://*.google.com</option>
+				</select>
+			</label>
+		</p>
+		<p>
+			<label>Select action</label>
 			<button id="permission_request">Request</button>
-		</p>
-		<p>
-			<label>Permission contains origin?: <input type="text"></label>
-			<button id="permission_contain">Contains?</button>
-		</p>
-		<p>
-			<label>Remove origin permission: <input type="text"></label>
 			<button id="permission_remove">Remove</button>
+			<button id="permission_contain">Contain?</button>
+		</p>
+		<p>
+			<table>
+				<thead>
+
+					<tr>
+						<th>On added</th>
+						<th>On removed</th>
+						<th>Contain?</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td id="on-added"></td>
+						<td id="on-removed"></td>
+						<td id="contains"></td>
+					</tr>
+				</tbody>
+			</table>
 		</p>
 	</body>
 </html>
