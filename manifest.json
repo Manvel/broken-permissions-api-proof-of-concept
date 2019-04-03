@@ -1,7 +1,6 @@
 {
    "author": "Manvel",
    "manifest_version": 2,
-   "default_locale": "en_US",
    "name": "Permissions API issue",
    "description": "Chrome permissions API issue reproduction, see -> https://github.com/Manvel/chrome-permissions-api-issue/blob/master/README.md",
    "browser_action": {
