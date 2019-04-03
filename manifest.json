@@ -2,8 +2,8 @@
    "author": "Manvel",
    "manifest_version": 2,
    "default_locale": "en_US",
-   "name": "Broken Permissions API",
-   "description": "Proof of concept for broken chrome permissions API",
+   "name": "Permissions API issue",
+   "description": "Chrome permissions API issue reproduction, see -> https://github.com/Manvel/chrome-permissions-api-issue/blob/master/README.md",
    "browser_action": {
       "default_icon": "images/icon/128x128.png",
       "default_popup": "popup.html"
